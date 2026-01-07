@@ -27,7 +27,9 @@ class PokemonAdapter(
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         val pok = pokelist[position]
         holder.tvNombre.text = pok.nombre
+        holder.ivPokemon.setImageResource(pok.photo)
     }
+
 
     override fun getItemCount(): Int = pokelist.size
 
