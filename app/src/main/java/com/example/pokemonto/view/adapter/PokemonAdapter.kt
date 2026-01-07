@@ -10,7 +10,8 @@ import com.example.pokemonto.R
 import com.example.pokemonto.model.PokemonModel
 
 class PokemonAdapter(
-    private var pokelist: List<PokemonModel>
+    private var pokelist: List<PokemonModel>,
+    private val onItemClick: (PokemonModel) -> Unit
 ) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
     class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -25,13 +26,14 @@ class PokemonAdapter(
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val pok = pokelist[position]
-        holder.tvNombre.text = pok.nombre
-        holder.ivPokemon.setImageDrawable(null)
-        holder.ivPokemon.setImageResource(pok.photo)
+        val pokemon = pokelist[position]
+        holder.tvNombre.text = pokemon.nombre
+        holder.ivPokemon.setImageResource(pokemon.photo)
+
+        holder.itemView.setOnClickListener {
+            onItemClick(pokemon)
+        }
     }
-
-
 
     override fun getItemCount(): Int = pokelist.size
 

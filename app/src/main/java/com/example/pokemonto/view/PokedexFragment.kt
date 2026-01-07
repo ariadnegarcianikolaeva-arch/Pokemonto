@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemonto.R
@@ -30,15 +31,25 @@ class PokedexFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.rPokemon)
 
-        // Inicializamos el adapter con lista vacía
-        pokemonAdapter = PokemonAdapter(emptyList())
+        // Adapter con navegación al detalle
+        pokemonAdapter = PokemonAdapter(emptyList()) { pokemon ->
+            val bundle = Bundle().apply {
+                putString("nombre", pokemon.nombre)
+                putString("descripcion", pokemon.descripcion)
+                putInt("foto", pokemon.photo)
+            }
+
+            findNavController().navigate(
+                R.id.action_PokedexFragment_to_DetailsFragment,
+                bundle
+            )
+        }
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = pokemonAdapter
         }
 
-        // Observamos la lista del ViewModel y actualizamos el adapter
         pokemonViewModel.pokemonList.observe(viewLifecycleOwner) { lista ->
             pokemonAdapter.updateList(lista)
         }
