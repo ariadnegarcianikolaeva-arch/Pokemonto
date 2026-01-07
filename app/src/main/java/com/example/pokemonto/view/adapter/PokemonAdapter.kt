@@ -11,13 +11,9 @@ import com.example.pokemonto.model.PokemonModel
 
 class PokemonAdapter(
     private var pokelist: List<PokemonModel>,
-    private val onItemClick: (PokemonModel) -> Unit
+    private val onItemClick: (PokemonModel) -> Unit,
+    private val onFavoriteClick: (PokemonModel) -> Unit
 ) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
-
-    class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val ivPokemon: ImageView = view.findViewById(R.id.ivPokemon)
-        val tvNombre: TextView = view.findViewById(R.id.tvNombre)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -26,13 +22,7 @@ class PokemonAdapter(
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val pokemon = pokelist[position]
-        holder.tvNombre.text = pokemon.nombre
-        holder.ivPokemon.setImageResource(pokemon.photo)
-
-        holder.itemView.setOnClickListener {
-            onItemClick(pokemon)
-        }
+        holder.bind(pokelist[position])
     }
 
     override fun getItemCount(): Int = pokelist.size
@@ -40,5 +30,32 @@ class PokemonAdapter(
     fun updateList(newList: List<PokemonModel>) {
         pokelist = newList
         notifyDataSetChanged()
+    }
+
+    inner class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        private val tvNombre: TextView = itemView.findViewById(R.id.tvNombre)
+        private val ivPokemon: ImageView = itemView.findViewById(R.id.ivPokemon)
+        private val ivFavorite: ImageView = itemView.findViewById(R.id.ivFavorito)
+
+        fun bind(pokemon: PokemonModel) {
+            tvNombre.text = pokemon.nombre
+            ivPokemon.setImageResource(pokemon.photo)
+
+            ivFavorite.setImageResource(
+                if (pokemon.favorito)
+                    R.drawable.if_fav
+                else
+                    R.drawable.if_borde
+            )
+
+            itemView.setOnClickListener {
+                onItemClick(pokemon)
+            }
+
+            ivFavorite.setOnClickListener {
+                onFavoriteClick(pokemon)
+            }
+        }
     }
 }

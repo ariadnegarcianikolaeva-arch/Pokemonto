@@ -4,5 +4,5 @@ data class PokemonModel(
     val nombre: String,
     val descripcion: String,
     val photo: Int,
-    val favorito: Boolean= false
+    var favorito: Boolean = false
 )
