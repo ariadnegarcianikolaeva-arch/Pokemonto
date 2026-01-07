@@ -1,4 +1,7 @@
 package com.example.pokemonto.model
 
-class PokemonModel {
-}
+data class PokemonModel(
+    val nombre: String,
+    val descripcion: String,
+    val photo: Int
+)
