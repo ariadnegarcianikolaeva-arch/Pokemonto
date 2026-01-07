@@ -43,44 +43,53 @@ class PokemonRepository {
                 "AGUA. Aumenta de peso deliberadamente para contrarrestar la fuerza de los chorros de agua que dispara.",
                 R.drawable.img_8),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Caterpie",
+                "BICHO. Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.",
                 R.drawable.img_9),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Metapod",
+                "BICHO. Como en este estado solo puede endurecer su coraza, permanece inmóvil a la espera de evolucionar.\n" +
+                        "\n",
                 R.drawable.img_10),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Butterfree",
+                "BICHO|VOLADOR. Adora el néctar de las flores. Una pequeña cantidad de polen le basta para localizar prados floridos.\n" +
+                        "\n",
                 R.drawable.img_11),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Weedle",
+                "BICHO|VENENO. El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\n" +
+                        "\n",
                 R.drawable.img_12),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Kakuna",
+                "BICHO|VENENO. Aunque es casi incapaz de moverse, en caso de sentirse amenazado puede envenenar a los enemigos con su aguijón.\n" +
+                        "\n",
                 R.drawable.img_13),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Beedrill",
+                "BICHO|VENENO. Tiene tres aguijones venenosos, dos en las patas anteriores y uno en la parte baja del abdomen, con los que ataca a sus enemigos una y otra vez.\n" +
+                        "\n",
                 R.drawable.img_14),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Pikachu",
+                "ELECTRICO. Cuando se enfada, este Pokémon descarga la energía que almacena en el interior de las bolsas de las mejillas.\n" +
+                        "\n",
                 R.drawable.img_15),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Raichu",
+                "ELECTRICO. Su cola actúa como toma de tierra y descarga electricidad al suelo, lo que le protege de los calambrazos.\n" +
+                        "\n",
                 R.drawable.img_16),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Solgaleo",
+                "PSIQUICO|ACERO. Es capaz de crear Ultraumbrales a través de los cuales formas de vida y energía procedentes de otros mundos acuden al nuestro.\n" +
+                        "\n",
                 R.drawable.img_17),
             PokemonModel(
-                "Bulbasaur",
-                "",
+                "Lunala",
+                "PSIQUICO|FANTASMA. Aparece en obras de la literatura antigua en las que se refieren a él como la “criatura que invoca a la luna”.\n" +
+                        "\n",
                 R.drawable.img_18),
 
             )
