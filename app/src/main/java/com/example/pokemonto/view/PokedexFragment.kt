@@ -25,8 +25,7 @@ class PokedexFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         politicosViewModel.pokemonList.observe(viewLifecycleOwner) { lista ->
-            // De momento no hacemos nada
-            // Aquí llegan los datos correctamente
+
         }
     }
 }
